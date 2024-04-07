@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!--uma forma de aplicar css-->
+    <style>
+        h4 {
+            color: #c9c9c9;
+            font-size: 100px;
+        }
+    </style>
+
+</head>
+<body>
+    <h2 style="color: blue; font: 100"><!--aplicando css direto no html-->
+        Página Principal
+    </h2>
+
+    <button id="botao">click</button>
+
+    <script>
+        var botao = document.getElementById("botao");
+        botao.onclick = function(){
+            alert("botão clicado com sucesso")
+        }
+    </script>
+
+    <h4>Seja bem Vindo, {{.Nome}}</h4><!--passando o Nome do usuário para aparecer na página-->
+
+</body>
+</html>
+<!-- -->

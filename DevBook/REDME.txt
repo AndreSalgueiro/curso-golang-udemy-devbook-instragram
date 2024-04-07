@@ -1,0 +1,13 @@
+Uma aplicação que possui um fornt end e um backend
+
+A aplicação é uma rede social
+
+O backend manipula os usuarios
+frontend é uma pagina html da rede social 
+
+A integração do backend e front end é via API Rest
+
+Repositórios
+Aulas Iniciais: https://github.com/OtavioGallego/curso-golang
+
+Aplicação: https://github.com/OtavioGallego/DevBook

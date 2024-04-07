@@ -1,0 +1,5 @@
+mode: set
+testes-automatizados/enderecos/enderecos.go:7.42,14.59 4 1
+testes-automatizados/enderecos/enderecos.go:14.59,17.82 2 1
+testes-automatizados/enderecos/enderecos.go:17.82,19.4 1 1
+testes-automatizados/enderecos/enderecos.go:21.2,21.37 1 1

@@ -1,0 +1,1 @@
+Aqui vc vai encontrar vários estrutura na linguagem go

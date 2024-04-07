@@ -1,0 +1,60 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página Principal</title>
+    <!--importando o arquivo css do bootstrap.css que foi baixado-->
+    <link href="/assets/css/bootstrap.css" rel="stylesheet"/>
+</head>
+
+<body>
+      <!--inserindo código html do cabeçalho definido no arquivo cabecalho.html-->
+      {{ template "cabecalho"}}
+
+      <div class="container-fluid">
+        <div class="row mt-4">
+          <div class="col-xs-12 col-sm-12 col-md-5 col-lg-5 col-xl-5">
+            <h3>Nova Publicação</h3>
+            <fieldset>
+              <form id="nova-publicacao">
+                <div class="form-group">
+                  <label for="titulo">Título</label>
+                  <input type="text" class="form-control" id="titulo" name="titulo" required="required"
+                    placeholder="Insira o título da sua publicação">
+                </div>
+     
+                <div class="form-group">
+                  <label for="counteudo">Conteúdo</label>
+                  <textarea class="form-control" id="conteudo" name="conteudo" required="required"
+                    placeholder="Insira o conteúdo da sua publicação"></textarea>
+                </div>
+     
+                <button class="btn btn-primary" type="submit">
+                  Publicar
+                </button>
+                
+              </form>
+            </fieldset>
+          </div>
+            <!--as linhas podem ser divididas por padrão em até 12 colunas, aqui estou dizendo que essa outra div para telas menores vai ocupar 12 colunas (com isso vai para a linha de baixo) e as telas grandes vai ocupar as outras 7 colunas então teremos 2 divs na mesma linha uma com 5 colunas e outra com 7 para telas grandes-->
+            <div class="col-xs-12 col-sm-12 col-md-7 col-lg-7 col-xl-7">               
+                <!--iterando sobre o slice de publicações para obter os valores e colocar na página-->
+                {{ range .Publicacoes }}<!--loop-->
+                  {{ if (eq .AutorID $.UsuarioID) }}
+                    {{ template "publicacao-com-permissao" . }}<!--o ponto está indicando que deve-se passar todos os campos de .Publicacoes para o template que estou chamando-->
+                  {{ else }}
+                    {{ template "publicacao-sem-permissao" .}}
+                  {{ end }}
+                {{ end }}
+            </div>
+        </div>
+    </div>
+    <!--inserindo o código html defino nos arquivo "rodape" e "scripts"-->
+    {{ template "rodape"}}
+    {{ template "scripts" }}
+
+    <!--importando o código publicacoes que chama a rota para registrar uma publicação-->
+    <script src="/assets/js/publicacoes.js"></script>
+
+</body>
+</html>
